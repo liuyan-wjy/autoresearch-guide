@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoResearch GitHub Guide: What It Is and Where to Start</title>
+  <meta name="description" content="Find the official AutoResearch GitHub repo, understand the project structure, and learn where to start with Karpathy's AutoResearch.">
+  <link rel="canonical" href="https://autoresearch-guide.pages.dev/autoresearch-github-guide/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">AutoResearch Guide</div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/run-autoresearch-on-mac-or-small-gpus/">Hardware</a>
+        <a href="/autoresearch-vs-autora/">Comparison</a>
+      </nav>
+      <div class="pill">Unofficial guide</div>
+    </div>
+
+    <header class="article-hero">
+      <div class="breadcrumbs"><a href="/">Home</a> / AutoResearch GitHub Guide</div>
+      <div class="card">
+        <div class="eyebrow">Support Page</div>
+        <h1>AutoResearch GitHub Guide: What It Is and Where to Start</h1>
+        <p class="lead">
+          If you searched for <strong>autoresearch github</strong> or <strong>karpathy auto research github</strong>,
+          the repository most people mean is <a href="https://github.com/karpathy/autoresearch" target="_blank" rel="noopener">karpathy/autoresearch</a>.
+          This page explains what the repo is, why it matters, and which files to look at first.
+        </p>
+      </div>
+    </header>
+
+    <main class="article">
+      <div>
+        <section class="card">
+          <h2>What Is AutoResearch?</h2>
+          <p>
+            AutoResearch is an open-source experiment in autonomous ML research. It gives an AI coding agent a compact
+            training loop and asks it to improve the setup by editing code, running short experiments, and checking whether
+            the result got better.
+          </p>
+          <p>
+            The repo is small on purpose. That makes it easier to inspect than a large research stack and easier for agents
+            to work with.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>Where Is the Official GitHub Repo?</h2>
+          <p>
+            The official source is <a href="https://github.com/karpathy/autoresearch" target="_blank" rel="noopener">github.com/karpathy/autoresearch</a>.
+            This site is not the official home of the project.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>Which Files Matter Most?</h2>
+          <ul>
+            <li><code>prepare.py</code> for data prep, tokenizer setup, and utilities</li>
+            <li><code>train.py</code> for the main training logic the agent is expected to change</li>
+            <li><code>program.md</code> for the human-written instructions that guide the agent</li>
+          </ul>
+        </section>
+
+        <section class="card faq">
+          <h2>FAQ</h2>
+          <details open>
+            <summary>Who created AutoResearch?</summary>
+            <p>Andrej Karpathy created the repository <code>karpathy/autoresearch</code>.</p>
+          </details>
+          <details>
+            <summary>Is the GitHub repo the official source?</summary>
+            <p>Yes. The GitHub repository is the official code source. This page is only an explanatory guide.</p>
+          </details>
+          <details>
+            <summary>Where should a beginner start?</summary>
+            <p>Start with the README, then review <code>program.md</code> and <code>train.py</code> so you understand the research loop.</p>
+          </details>
+        </section>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3>Related Pages</h3>
+          <ul>
+            <li><a href="/">AutoResearch homepage</a></li>
+            <li><a href="/run-autoresearch-on-mac-or-small-gpus/">Mac and smaller GPU guide</a></li>
+            <li><a href="/autoresearch-vs-autora/">AutoResearch vs AutoRA</a></li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      This page is an unofficial guide and is not affiliated with Andrej Karpathy or the AutoResearch maintainers.
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Can You Run AutoResearch on Mac or Smaller GPUs?</title>
+  <meta name="description" content="Learn whether AutoResearch can run on Mac, Windows, AMD, and smaller GPUs, and what tradeoffs to expect.">
+  <link rel="canonical" href="https://autoresearch-guide.pages.dev/run-autoresearch-on-mac-or-small-gpus/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">AutoResearch Guide</div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/autoresearch-github-guide/">GitHub Guide</a>
+        <a href="/autoresearch-vs-autora/">Comparison</a>
+      </nav>
+      <div class="pill">Unofficial guide</div>
+    </div>
+
+    <header class="article-hero">
+      <div class="breadcrumbs"><a href="/">Home</a> / Mac or Smaller GPUs</div>
+      <div class="card">
+        <div class="eyebrow">Support Page</div>
+        <h1>Can You Run AutoResearch on Mac or Smaller GPUs?</h1>
+        <p class="lead">
+          Short answer: sometimes, but not with the original default assumptions. AutoResearch was designed around a
+          single NVIDIA GPU setup, so smaller hardware usually means reducing model complexity or using a community fork.
+        </p>
+      </div>
+    </header>
+
+    <main class="article">
+      <div>
+        <section class="card">
+          <h2>Default Hardware Assumptions</h2>
+          <p>
+            The original AutoResearch repository is built around a one-GPU workflow and the README notes testing on H100-class hardware.
+            That makes the default experience very different from what a laptop or small consumer GPU can comfortably handle.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>What Usually Needs to Change?</h2>
+          <ul>
+            <li>use a smaller dataset with lower entropy</li>
+            <li>reduce vocabulary size</li>
+            <li>lower sequence length</li>
+            <li>reduce batch size and model depth</li>
+            <li>avoid settings that are inefficient on your platform</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>When to Use a Fork</h2>
+          <p>
+            If you are on Mac, Windows, or AMD, a fork may save you significant setup time. The original repository already
+            points readers toward notable forks for those environments, which makes them the best place to start if you are
+            outside the main NVIDIA path.
+          </p>
+        </section>
+
+        <section class="card faq">
+          <h2>FAQ</h2>
+          <details open>
+            <summary>Can AutoResearch run on a MacBook?</summary>
+            <p>Possibly through forks and lower-compute adaptations, but not with the default expectations of the original setup.</p>
+          </details>
+          <details>
+            <summary>Do I need an H100?</summary>
+            <p>No, but the original repo was tested on that class of hardware, so smaller systems will usually need adjustments.</p>
+          </details>
+          <details>
+            <summary>Should I use the main repo or a fork?</summary>
+            <p>If your hardware differs substantially from the default NVIDIA setup, a fork is often the faster path.</p>
+          </details>
+        </section>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3>Related Pages</h3>
+          <ul>
+            <li><a href="/">AutoResearch homepage</a></li>
+            <li><a href="/autoresearch-github-guide/">AutoResearch GitHub guide</a></li>
+            <li><a href="/autoresearch-vs-autora/">AutoResearch vs AutoRA</a></li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      This page is an unofficial guide and is not affiliated with Andrej Karpathy or the AutoResearch maintainers.
+    </footer>
+  </div>
+</body>
+</html>
