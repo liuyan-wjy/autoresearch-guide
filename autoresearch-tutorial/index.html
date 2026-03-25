@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoResearch Tutorial: How to Run It Step by Step</title>
+  <meta name="description" content="Follow this AutoResearch tutorial to understand the repo, choose an environment, start with smaller experiments, and avoid common setup mistakes.">
+  <meta name="author" content="Open Repo Guide">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://openrepoguide.com/autoresearch-tutorial/">
+  <meta property="og:title" content="AutoResearch Tutorial: How to Run It Step by Step">
+  <meta property="og:description" content="A practical AutoResearch tutorial for readers who want a realistic way to start without overspending or overcomplicating setup.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://openrepoguide.com/autoresearch-tutorial/">
+  <meta property="og:site_name" content="Open Repo Guide">
+  <meta property="og:image" content="https://openrepoguide.com/og-cover.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AutoResearch Tutorial: How to Run It Step by Step">
+  <meta name="twitter:description" content="A practical AutoResearch tutorial for readers who want a realistic way to start without overspending or overcomplicating setup.">
+  <meta name="twitter:image" content="https://openrepoguide.com/og-cover.svg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "AutoResearch Tutorial: How to Run It Step by Step",
+          "description": "Follow this AutoResearch tutorial to understand the repo, choose an environment, start with smaller experiments, and avoid common setup mistakes.",
+          "author": {
+            "@type": "Organization",
+            "name": "Open Repo Guide"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Open Repo Guide",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://openrepoguide.com/og-cover.svg"
+            }
+          },
+          "datePublished": "2026-03-25",
+          "dateModified": "2026-03-25",
+          "mainEntityOfPage": "https://openrepoguide.com/autoresearch-tutorial/",
+          "image": "https://openrepoguide.com/og-cover.svg"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://openrepoguide.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "AutoResearch Tutorial",
+              "item": "https://openrepoguide.com/autoresearch-tutorial/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is this a copy-paste install tutorial?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Not exactly. AutoResearch is a fast-moving repository, so the most useful tutorial is one that helps you choose the right setup path and avoid common mistakes rather than pretending every machine can use the same commands."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Should I start locally or in GPU cloud?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "If you already have suitable NVIDIA hardware, local can be fine. If you are testing the repo for the first time or need stronger GPUs, GPU cloud can be the easier way to validate the setup."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the safest way to begin?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Read the official repository first, begin with small experiments, use a fork if your hardware differs from the default path, and avoid committing to expensive long runs before your environment is stable."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">Open Repo Guide</div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/autoresearch-github-guide/">GitHub Guide</a>
+        <a href="/run-autoresearch-on-mac-or-small-gpus/">Hardware</a>
+        <a href="/best-gpu-cloud-for-autoresearch/">GPU Cloud</a>
+        <a href="/about/">About</a>
+      </nav>
+      <div class="pill">Step-by-step guide</div>
+    </div>
+
+    <article itemscope itemtype="https://schema.org/Article">
+      <header class="article-hero">
+        <div class="breadcrumbs"><a href="/">Home</a> / AutoResearch Tutorial</div>
+        <div class="card">
+          <div class="eyebrow">Support Page</div>
+          <h1 itemprop="headline">AutoResearch Tutorial: How to Run It Step by Step</h1>
+          <p class="lead">
+            This tutorial is designed for readers who want a practical path into AutoResearch without pretending the project
+            is a one-click beginner app. The goal is to help you choose a realistic environment, start with manageable
+            experiments, and avoid wasting time on the wrong setup.
+          </p>
+          <div class="page-meta">
+            <span itemprop="author" itemscope itemtype="https://schema.org/Organization">By <a href="/about/" rel="author" itemprop="url"><span itemprop="name">Open Repo Guide</span></a></span>
+            <span><time itemprop="datePublished" datetime="2026-03-25">Published March 25, 2026</time></span>
+            <span><time itemprop="dateModified" datetime="2026-03-25">Updated March 25, 2026</time></span>
+          </div>
+        </div>
+      </header>
+
+      <main class="article">
+        <div>
+          <section class="card">
+            <h2>Step 1: Read the Official Repository First</h2>
+            <p>
+              Start with the official
+              <a href="https://github.com/karpathy/autoresearch" target="_blank" rel="noopener">karpathy/autoresearch repository</a>.
+              Before you run anything, you should understand the default assumptions, the overall experiment loop, and the
+              three most important files: <code>prepare.py</code>, <code>train.py</code>, and <code>program.md</code>.
+            </p>
+            <p>
+              If you want a quicker overview before diving into the source, the
+              <a href="/autoresearch-github-guide/">GitHub guide</a> gives you the shortest reading path.
+            </p>
+          </section>
+
+          <section class="card">
+            <h2>Step 2: Choose the Right Starting Environment</h2>
+            <p>
+              The original project assumes a one-GPU NVIDIA workflow. If you already have suitable hardware, that may be the
+              simplest place to begin. If you do not, or if you want to validate the repo before investing in local hardware,
+              compare a short cloud run against a smaller local adaptation.
+            </p>
+            <p>
+              Use the <a href="/run-autoresearch-on-mac-or-small-gpus/">hardware guide</a> if you are on a Mac or smaller GPU.
+              Use the <a href="/best-gpu-cloud-for-autoresearch/">GPU cloud guide</a> if your main question is whether it is
+              worth renting compute for a first serious attempt.
+            </p>
+          </section>
+
+          <section class="card">
+            <h2>Step 3: Start Smaller Than You Think</h2>
+            <p>
+              One of the easiest mistakes with AutoResearch is trying to reproduce the most ambitious version of the project
+              before you have a stable environment. For a first run, reduce variables where possible. Smaller experiments are
+              more useful than a broken full-scale setup because they let you confirm that the loop is functioning at all.
+            </p>
+            <ul>
+              <li>keep the first session short</li>
+              <li>avoid expensive long reservations until the environment works</li>
+              <li>prefer a smaller or adapted path if your hardware is limited</li>
+              <li>document the exact environment that succeeds</li>
+            </ul>
+          </section>
+
+          <section class="card">
+            <h2>Step 4: Use Forks When the Default Path Does Not Fit</h2>
+            <p>
+              If you are outside the default NVIDIA setup, forks are not a sign that you are “doing it wrong.” They are often
+              the most efficient way to learn from the project on your own hardware. The main repository and community links
+              are usually the best place to discover those adaptations first.
+            </p>
+            <p>
+              This is especially important if your real goal is understanding the research loop rather than matching every
+              default assumption in the main repo.
+            </p>
+          </section>
+
+          <section class="card">
+            <h2>Step 5: Decide Whether to Keep Going Locally or Move to Cloud</h2>
+            <p>
+              Once you have proven that you understand the repo and can execute a small run, the next decision is strategic:
+              continue locally, or move to cloud for more predictable access to stronger GPUs. This is where many users save
+              time by being honest about their goal. If you are validating interest, cloud can be a cleaner next step. If you
+              are building a repeatable personal workflow, local hardware may still make more sense.
+            </p>
+          </section>
+
+          <section class="card">
+            <h2>Common Mistakes to Avoid</h2>
+            <ul>
+              <li>treating the repo like a polished beginner app instead of a fast-moving experimental project</li>
+              <li>spending heavily on compute before the environment is stable</li>
+              <li>ignoring forks when your platform differs from the default assumptions</li>
+              <li>changing too many variables at once and losing track of what actually worked</li>
+            </ul>
+          </section>
+
+          <section class="card faq">
+            <h2>FAQ</h2>
+            <details open>
+              <summary>Is this a copy-paste install tutorial?</summary>
+              <p>Not exactly. AutoResearch is a fast-moving repository, so the most useful tutorial is one that helps you choose the right setup path and avoid common mistakes rather than pretending every machine can use the same commands.</p>
+            </details>
+            <details>
+              <summary>Should I start locally or in GPU cloud?</summary>
+              <p>If you already have suitable NVIDIA hardware, local can be fine. If you are testing the repo for the first time or need stronger GPUs, GPU cloud can be the easier way to validate the setup.</p>
+            </details>
+            <details>
+              <summary>What is the safest way to begin?</summary>
+              <p>Read the official repository first, begin with small experiments, use a fork if your hardware differs from the default path, and avoid committing to expensive long runs before your environment is stable.</p>
+            </details>
+          </section>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h3>Related Pages</h3>
+            <ul>
+              <li><a href="/">AutoResearch homepage</a></li>
+              <li><a href="/autoresearch-github-guide/">AutoResearch GitHub guide</a></li>
+              <li><a href="/run-autoresearch-on-mac-or-small-gpus/">Mac and smaller GPU guide</a></li>
+              <li><a href="/best-gpu-cloud-for-autoresearch/">Best GPU cloud options</a></li>
+            </ul>
+          </div>
+        </aside>
+      </main>
+
+      <footer>
+        <div>This page is an unofficial tutorial and is not affiliated with Andrej Karpathy or the AutoResearch maintainers.</div>
+        <div class="footer-links">
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy/">Privacy</a>
+        </div>
+      </footer>
+    </article>
+  </div>
+</body>
+</html>
