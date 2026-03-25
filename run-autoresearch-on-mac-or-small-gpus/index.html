@@ -34,7 +34,11 @@
           },
           "publisher": {
             "@type": "Organization",
-            "name": "Open Repo Guide"
+            "name": "Open Repo Guide",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://openrepoguide.com/og-cover.svg"
+            }
           },
           "datePublished": "2026-03-24",
           "dateModified": "2026-03-25",
@@ -114,9 +118,9 @@
           single NVIDIA GPU setup, so smaller hardware usually means reducing model complexity or using a community fork.
         </p>
         <div class="page-meta">
-          <span>By Open Repo Guide</span>
-          <span>Published March 24, 2026</span>
-          <span>Updated March 25, 2026</span>
+          <span>By <a href="/about/" rel="author">Open Repo Guide</a></span>
+          <span><time datetime="2026-03-24">Published March 24, 2026</time></span>
+          <span><time datetime="2026-03-25">Updated March 25, 2026</time></span>
         </div>
       </div>
     </header>
@@ -157,6 +161,11 @@
           <p>
             A fork is also the better starting point if your goal is learning and experimentation rather than reproducing
             the exact assumptions used in the main repository.
+          </p>
+          <p>
+            The most reliable place to find those adaptations is the
+            <a href="https://github.com/karpathy/autoresearch" target="_blank" rel="noopener">official AutoResearch repository</a>,
+            because new forks and setup notes usually appear there first.
           </p>
         </section>
 

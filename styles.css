@@ -324,6 +324,11 @@ li + li {
   gap: 6px;
 }
 
+.page-meta time,
+.page-meta a {
+  color: inherit;
+}
+
 .article {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 280px;
