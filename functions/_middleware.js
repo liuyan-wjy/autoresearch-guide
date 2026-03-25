@@ -7,6 +7,7 @@ const PRETTY_ROUTES = new Set([
   "/privacy/",
   "/autoresearch-github-guide/",
   "/autoresearch-vs-autora/",
+  "/best-gpu-cloud-for-autoresearch/",
   "/run-autoresearch-on-mac-or-small-gpus/",
 ]);
 
