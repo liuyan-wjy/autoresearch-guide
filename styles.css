@@ -92,6 +92,13 @@ img {
   font-size: 0.9rem;
 }
 
+.hero-side-title {
+  margin: 0 0 14px;
+  font-size: 1.14rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
 .hero {
   padding: 24px 0 68px;
 }
@@ -162,6 +169,10 @@ h2 {
 
 h3 {
   font-size: 1.14rem;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 p,
@@ -298,6 +309,21 @@ li + li {
   max-width: none;
 }
 
+.page-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.page-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .article {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 280px;
@@ -338,6 +364,28 @@ footer {
   padding: 24px 0 56px;
   color: var(--muted);
   font-size: 0.94rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: var(--muted);
+}
+
+.legal-list,
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.legal-list li + li,
+.contact-list li + li {
+  margin-top: 10px;
 }
 
 @media (max-width: 940px) {

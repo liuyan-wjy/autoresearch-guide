@@ -3,52 +3,78 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AutoResearch by Andrej Karpathy: GitHub, How It Works, Setup & Forks</title>
-  <meta name="description" content="Learn what AutoResearch is, how Karpathy's GitHub project works, what hardware it needs, notable forks, and where to start.">
+  <title>AutoResearch by Andrej Karpathy: GitHub Guide</title>
+  <meta name="description" content="Learn what AutoResearch is, how Karpathy's GitHub project works, what hardware it needs, and where to start with this unofficial guide.">
+  <meta name="author" content="Open Repo Guide">
+  <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://openrepoguide.com/">
-  <meta property="og:title" content="AutoResearch by Andrej Karpathy">
-  <meta property="og:description" content="An unofficial guide to Karpathy's AutoResearch project: GitHub link, workflow, requirements, forks, and FAQs.">
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="AutoResearch by Andrej Karpathy: GitHub Guide">
+  <meta property="og:description" content="An unofficial guide to AutoResearch, including GitHub links, setup notes, notable forks, and FAQs.">
+  <meta property="og:type" content="article">
   <meta property="og:url" content="https://openrepoguide.com/">
-  <meta property="og:site_name" content="AutoResearch Guide">
+  <meta property="og:site_name" content="Open Repo Guide">
+  <meta property="og:image" content="https://openrepoguide.com/og-cover.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AutoResearch by Andrej Karpathy: GitHub Guide">
+  <meta name="twitter:description" content="An unofficial guide to AutoResearch, including GitHub links, setup notes, notable forks, and FAQs.">
+  <meta name="twitter:image" content="https://openrepoguide.com/og-cover.svg">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "What is AutoResearch?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "AutoResearch is an open-source project by Andrej Karpathy that lets AI agents run repeated machine learning experiments inside a compact training setup."
-          }
+          "@type": "Organization",
+          "name": "Open Repo Guide",
+          "url": "https://openrepoguide.com/"
         },
         {
-          "@type": "Question",
-          "name": "Where is the AutoResearch GitHub repository?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The repository most people are looking for is github.com/karpathy/autoresearch."
-          }
+          "@type": "WebSite",
+          "name": "Open Repo Guide",
+          "url": "https://openrepoguide.com/"
         },
         {
-          "@type": "Question",
-          "name": "Can AutoResearch run on Mac or smaller hardware?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The default setup assumes a single NVIDIA GPU, but many users explore forks and smaller-compute adaptations for Mac, Windows, AMD, and lower-power hardware."
-          }
+          "@type": "WebPage",
+          "name": "AutoResearch by Andrej Karpathy: GitHub Guide",
+          "url": "https://openrepoguide.com/"
         },
         {
-          "@type": "Question",
-          "name": "Is AutoResearch the same as AutoRA?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. AutoResearch by Karpathy and AutoRA are different projects with different goals."
-          }
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is AutoResearch?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AutoResearch is an open-source project by Andrej Karpathy that lets AI agents run repeated machine learning experiments inside a compact training setup."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where is the AutoResearch GitHub repository?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The repository most people are looking for is github.com/karpathy/autoresearch."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can AutoResearch run on Mac or smaller hardware?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The default setup assumes a single NVIDIA GPU, but many users explore forks and smaller-compute adaptations for Mac, Windows, AMD, and lower-power hardware."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is AutoResearch the same as AutoRA?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. AutoResearch by Karpathy and AutoRA are different projects with different goals."
+              }
+            }
+          ]
         }
       ]
     }
@@ -58,14 +84,14 @@
   <header class="hero">
     <div class="container">
       <div class="topbar">
-        <div class="brand">AutoResearch Guide</div>
+        <div class="brand">Open Repo Guide</div>
         <nav>
           <a href="#what-is-autoresearch">Overview</a>
           <a href="#how-it-works">How It Works</a>
           <a href="#requirements">Requirements</a>
-          <a href="#faq">FAQ</a>
+          <a href="/about/">About</a>
         </nav>
-        <div class="pill">Unofficial fan-made guide</div>
+        <div class="pill">Unofficial project guide</div>
       </div>
 
       <div class="hero-grid">
@@ -73,9 +99,9 @@
           <div class="eyebrow">AutoResearch GitHub Guide</div>
           <h1>AutoResearch by Andrej Karpathy</h1>
           <p class="lead">
-            AutoResearch is an open-source project that lets AI agents run repeated ML training
-            experiments inside a small, self-contained codebase. This page is an unofficial guide
-            that explains what the project is, how it works, and where to start.
+            AutoResearch is an open-source project that lets AI agents run repeated ML training experiments inside a small,
+            self-contained codebase. This page is an unofficial guide that explains what the project is, why it is trending,
+            how it works, and where to start.
           </p>
           <div class="actions">
             <a class="btn btn-primary" href="https://github.com/karpathy/autoresearch" target="_blank" rel="noopener">Open Official GitHub Repo</a>
@@ -84,7 +110,7 @@
         </div>
 
         <aside class="hero-side">
-          <h3>Quick Snapshot</h3>
+          <div class="hero-side-title">Quick Snapshot</div>
           <p class="mini">As of March 24, 2026, the repository had 53.5k stars and 7.4k forks on GitHub.</p>
           <div class="stat">
             <strong>Single GPU</strong>
@@ -109,14 +135,18 @@
         <div class="card">
           <h2>What Is AutoResearch?</h2>
           <p>
-            AutoResearch is a lightweight autonomous research loop for language model training. Instead of
-            manually tuning everything yourself, you let an AI coding agent test changes, run short training jobs,
-            compare outcomes, and keep iterating.
+            AutoResearch is a lightweight autonomous research loop for language model training. Instead of manually tuning
+            everything yourself, you let an AI coding agent test changes, run short training jobs, compare outcomes, and
+            keep iterating.
           </p>
           <p>
-            If you searched for <strong>autoresearch github</strong>, <strong>karpathy autoresearch</strong>,
-            or <strong>autoresearch ai</strong>, this is the project most people currently mean:
+            If you searched for <strong>autoresearch github</strong>, <strong>karpathy autoresearch</strong>, or
+            <strong>autoresearch ai</strong>, this is the project most people currently mean:
             <a href="https://github.com/karpathy/autoresearch" target="_blank" rel="noopener">karpathy/autoresearch</a>.
+          </p>
+          <p>
+            The main value of a page like this is not replacing the README. It is helping searchers quickly understand the
+            project before they dive into the repository, issues, forks, and community discussion around it.
           </p>
         </div>
       </div>
@@ -138,8 +168,8 @@
             </div>
             <div>
               <p class="note">
-                The other reason is simple: the project comes from Andrej Karpathy, so many developers search the repo
-                name directly before a broader ecosystem of tutorials and documentation exists.
+                The other reason is simple: the project comes from Andrej Karpathy, so many developers search the repo name
+                directly before a broader ecosystem of tutorials and documentation exists.
               </p>
             </div>
           </div>
@@ -234,12 +264,12 @@
         <div class="card">
           <h2>Forks and Smaller-Hardware Options</h2>
           <p>
-            One reason this project is interesting for searchers is that the ecosystem is already branching out.
-            The original repository points to notable forks for MacOS, Windows, and AMD.
+            One reason this project is interesting for searchers is that the ecosystem is already branching out. The original
+            repository points to notable forks for MacOS, Windows, and AMD.
           </p>
           <p>
-            If your real question is not "What is AutoResearch?" but "Can I run something like this on my machine?",
-            you will probably want to explore forks and reduced-compute adaptations instead of using the defaults unchanged.
+            If your real question is not "What is AutoResearch?" but "Can I run something like this on my machine?", you will
+            probably want to explore forks and reduced-compute adaptations instead of using the defaults unchanged.
           </p>
           <div class="actions">
             <a class="btn btn-secondary" href="/run-autoresearch-on-mac-or-small-gpus/">Read the hardware guide</a>
@@ -305,8 +335,12 @@
 
   <footer>
     <div class="container">
-      This page is an unofficial guide to AutoResearch. For source code, issues, and project updates, refer to the
-      official GitHub repository.
+      <div>This page is an unofficial guide to AutoResearch. For source code, issues, and project updates, refer to the official GitHub repository.</div>
+      <div class="footer-links">
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+      </div>
     </div>
   </footer>
 </body>

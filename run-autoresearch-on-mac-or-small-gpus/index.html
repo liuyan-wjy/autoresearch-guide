@@ -4,19 +4,102 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Can You Run AutoResearch on Mac or Smaller GPUs?</title>
-  <meta name="description" content="Learn whether AutoResearch can run on Mac, Windows, AMD, and smaller GPUs, and what tradeoffs to expect.">
+  <meta name="description" content="Learn whether AutoResearch can run on Mac, Windows, AMD, and smaller GPUs, what usually needs to change, and when a fork makes more sense.">
+  <meta name="author" content="Open Repo Guide">
+  <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://openrepoguide.com/run-autoresearch-on-mac-or-small-gpus/">
+  <meta property="og:title" content="Can You Run AutoResearch on Mac or Smaller GPUs?">
+  <meta property="og:description" content="Learn whether AutoResearch can run on Mac, Windows, AMD, and smaller GPUs, and what tradeoffs to expect.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://openrepoguide.com/run-autoresearch-on-mac-or-small-gpus/">
+  <meta property="og:site_name" content="Open Repo Guide">
+  <meta property="og:image" content="https://openrepoguide.com/og-cover.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Can You Run AutoResearch on Mac or Smaller GPUs?">
+  <meta name="twitter:description" content="Learn whether AutoResearch can run on Mac, Windows, AMD, and smaller GPUs, and what tradeoffs to expect.">
+  <meta name="twitter:image" content="https://openrepoguide.com/og-cover.svg">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "Can You Run AutoResearch on Mac or Smaller GPUs?",
+          "description": "Learn whether AutoResearch can run on Mac, Windows, AMD, and smaller GPUs, what usually needs to change, and when a fork makes more sense.",
+          "author": {
+            "@type": "Organization",
+            "name": "Open Repo Guide"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Open Repo Guide"
+          },
+          "datePublished": "2026-03-24",
+          "dateModified": "2026-03-25",
+          "mainEntityOfPage": "https://openrepoguide.com/run-autoresearch-on-mac-or-small-gpus/",
+          "image": "https://openrepoguide.com/og-cover.svg"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://openrepoguide.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Can You Run AutoResearch on Mac or Smaller GPUs?",
+              "item": "https://openrepoguide.com/run-autoresearch-on-mac-or-small-gpus/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can AutoResearch run on a MacBook?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Possibly through forks and lower-compute adaptations, but not with the default expectations of the original setup."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need an H100?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, but the original repo was tested on that class of hardware, so smaller systems will usually need adjustments."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Should I use the main repo or a fork?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "If your hardware differs substantially from the default NVIDIA setup, a fork is often the faster path."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
   <div class="container">
     <div class="topbar">
-      <div class="brand">AutoResearch Guide</div>
+      <div class="brand">Open Repo Guide</div>
       <nav>
         <a href="/">Home</a>
         <a href="/autoresearch-github-guide/">GitHub Guide</a>
         <a href="/autoresearch-vs-autora/">Comparison</a>
+        <a href="/about/">About</a>
       </nav>
       <div class="pill">Unofficial guide</div>
     </div>
@@ -30,6 +113,11 @@
           Short answer: sometimes, but not with the original default assumptions. AutoResearch was designed around a
           single NVIDIA GPU setup, so smaller hardware usually means reducing model complexity or using a community fork.
         </p>
+        <div class="page-meta">
+          <span>By Open Repo Guide</span>
+          <span>Published March 24, 2026</span>
+          <span>Updated March 25, 2026</span>
+        </div>
       </div>
     </header>
 
@@ -52,6 +140,11 @@
             <li>reduce batch size and model depth</li>
             <li>avoid settings that are inefficient on your platform</li>
           </ul>
+          <p>
+            Those tradeoffs matter because AutoResearch is designed around fast iteration, and once your hardware becomes
+            the bottleneck the research loop stops feeling lightweight. In practice, most smaller-hardware users end up
+            shrinking the problem until it fits the machine rather than trying to brute-force the original setup.
+          </p>
         </section>
 
         <section class="card">
@@ -60,6 +153,19 @@
             If you are on Mac, Windows, or AMD, a fork may save you significant setup time. The original repository already
             points readers toward notable forks for those environments, which makes them the best place to start if you are
             outside the main NVIDIA path.
+          </p>
+          <p>
+            A fork is also the better starting point if your goal is learning and experimentation rather than reproducing
+            the exact assumptions used in the main repository.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>What Searchers Usually Mean</h2>
+          <p>
+            Many people searching for this topic are not really asking whether AutoResearch can run unchanged on a MacBook.
+            They are asking whether they can explore the idea of the project on their own hardware. That is why forks,
+            lower-compute tweaks, and reduced model settings are more important than a simple yes-or-no answer.
           </p>
         </section>
 
@@ -93,7 +199,12 @@
     </main>
 
     <footer>
-      This page is an unofficial guide and is not affiliated with Andrej Karpathy or the AutoResearch maintainers.
+      <div>This page is an unofficial guide and is not affiliated with Andrej Karpathy or the AutoResearch maintainers.</div>
+      <div class="footer-links">
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+      </div>
     </footer>
   </div>
 </body>

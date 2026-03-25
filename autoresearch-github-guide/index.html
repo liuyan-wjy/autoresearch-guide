@@ -5,18 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AutoResearch GitHub Guide: What It Is and Where to Start</title>
   <meta name="description" content="Find the official AutoResearch GitHub repo, understand the project structure, and learn where to start with Karpathy's AutoResearch.">
+  <meta name="author" content="Open Repo Guide">
+  <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://openrepoguide.com/autoresearch-github-guide/">
+  <meta property="og:title" content="AutoResearch GitHub Guide: What It Is and Where to Start">
+  <meta property="og:description" content="Find the official AutoResearch GitHub repo, understand the project structure, and learn where to start.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://openrepoguide.com/autoresearch-github-guide/">
+  <meta property="og:site_name" content="Open Repo Guide">
+  <meta property="og:image" content="https://openrepoguide.com/og-cover.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AutoResearch GitHub Guide: What It Is and Where to Start">
+  <meta name="twitter:description" content="Find the official AutoResearch GitHub repo, understand the project structure, and learn where to start.">
+  <meta name="twitter:image" content="https://openrepoguide.com/og-cover.svg">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "AutoResearch GitHub Guide: What It Is and Where to Start",
+          "description": "Find the official AutoResearch GitHub repo, understand the project structure, and learn where to start with Karpathy's AutoResearch.",
+          "author": {
+            "@type": "Organization",
+            "name": "Open Repo Guide"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Open Repo Guide"
+          },
+          "datePublished": "2026-03-24",
+          "dateModified": "2026-03-25",
+          "mainEntityOfPage": "https://openrepoguide.com/autoresearch-github-guide/",
+          "image": "https://openrepoguide.com/og-cover.svg"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://openrepoguide.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "AutoResearch GitHub Guide",
+              "item": "https://openrepoguide.com/autoresearch-github-guide/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Who created AutoResearch?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Andrej Karpathy created the repository karpathy/autoresearch."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the GitHub repo the official source?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The GitHub repository is the official code source. This page is only an explanatory guide."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where should a beginner start?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Start with the README, then review program.md and train.py so you understand the research loop."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
   <div class="container">
     <div class="topbar">
-      <div class="brand">AutoResearch Guide</div>
+      <div class="brand">Open Repo Guide</div>
       <nav>
         <a href="/">Home</a>
         <a href="/run-autoresearch-on-mac-or-small-gpus/">Hardware</a>
         <a href="/autoresearch-vs-autora/">Comparison</a>
+        <a href="/about/">About</a>
       </nav>
       <div class="pill">Unofficial guide</div>
     </div>
@@ -31,6 +114,11 @@
           the repository most people mean is <a href="https://github.com/karpathy/autoresearch" target="_blank" rel="noopener">karpathy/autoresearch</a>.
           This page explains what the repo is, why it matters, and which files to look at first.
         </p>
+        <div class="page-meta">
+          <span>By Open Repo Guide</span>
+          <span>Published March 24, 2026</span>
+          <span>Updated March 25, 2026</span>
+        </div>
       </div>
     </header>
 
@@ -45,7 +133,8 @@
           </p>
           <p>
             The repo is small on purpose. That makes it easier to inspect than a large research stack and easier for agents
-            to work with.
+            to work with. It also means the files that matter most are easier to understand for people who are just trying
+            to decide whether the project is worth digging into.
           </p>
         </section>
 
@@ -53,7 +142,8 @@
           <h2>Where Is the Official GitHub Repo?</h2>
           <p>
             The official source is <a href="https://github.com/karpathy/autoresearch" target="_blank" rel="noopener">github.com/karpathy/autoresearch</a>.
-            This site is not the official home of the project.
+            This site is not the official home of the project, and it should be used as a guide rather than a replacement
+            for the repository itself.
           </p>
         </section>
 
@@ -64,6 +154,19 @@
             <li><code>train.py</code> for the main training logic the agent is expected to change</li>
             <li><code>program.md</code> for the human-written instructions that guide the agent</li>
           </ul>
+          <p>
+            A beginner can get value by reading these in order because they explain both the mechanics of the run and the
+            boundary between what the human specifies and what the agent is allowed to change.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>How to Read the Repo Quickly</h2>
+          <p>
+            The fastest path is to scan the README for the overall loop, inspect <code>program.md</code> to understand the
+            intended behavior, and then open <code>train.py</code> to see what the agent can modify. After that, browsing
+            issues and forks can help you understand what other users are trying to run and where the setup starts to bend.
+          </p>
         </section>
 
         <section class="card faq">
@@ -96,7 +199,12 @@
     </main>
 
     <footer>
-      This page is an unofficial guide and is not affiliated with Andrej Karpathy or the AutoResearch maintainers.
+      <div>This page is an unofficial guide and is not affiliated with Andrej Karpathy or the AutoResearch maintainers.</div>
+      <div class="footer-links">
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+      </div>
     </footer>
   </div>
 </body>
